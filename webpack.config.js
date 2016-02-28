@@ -10,7 +10,7 @@ module.exports = {
     path: path.join(__dirname, 'public'),
     filename: "index.js"
   },
-  devtool: 'source-map',
+  devtool: 'eval',
   module: {
     loaders: [
       {
@@ -30,6 +30,12 @@ module.exports = {
         test: /\.scss/,
         exclude: /node_modules/,
         loader: ExtractTextPlugin.extract('style', 'css!sass')
+      }, {
+        test: /\.html/,
+        loader: 'html',
+        query: {
+          attrs: 'img:src link:href'
+        }
       }, {
         test: /\.(ttf|eot|woff)(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: "file",
