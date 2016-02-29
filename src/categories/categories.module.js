@@ -4,9 +4,9 @@ import angular from 'angular'
 import 'ngstorage'
 
 import CategoriesController from './categories.controller'
-import routes from './categories.routes'
+import CategorySelector from './category-selector.directive'
 
 export default angular.module('myLocations.categories', [ 'ngStorage' ])
   .controller('CategoriesController', CategoriesController)
-  .config(routes)
+  .directive('categorySelector', CategorySelector)
   .name;
