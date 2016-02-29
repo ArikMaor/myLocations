@@ -6,6 +6,7 @@
     <title>myLocations</title>
     <meta name="description" content="Example Angular SPA">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   </head>
   <body><!--[if lt IE 8]>
     <p class="browserupgrade">
@@ -17,22 +18,23 @@
         <div class="navbar-fixed">
           <nav>
             <div class="nav-wrapper">
-              <ul id="slide-out" class="side-nav">
-                <li><a href="#!">First Sidebar Link</a></li>
-                <li><a href="#!">Second Sidebar Link</a></li>
-              </ul>
+              <a href="#!" class="brand-logo center">myLocations</a>
               <ul class="left">
-                <li><a href="#" data-activates="slide-out" class="open-menu button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a></li>
-              </ul><a href="#!" class="brand-logo center">myLocations</a>
-              <ul class="right hide-on-med-and-down">
-                <li><a href="sass.html"><i class="material-icons">search</i></a></li>
-                <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
-                <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
-                <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
-              </ul>
+                <li>
+                  <a href="#">
+                    <i class="material-icons left fa fa-cog"></i>
+                    <span>Edit Categories</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="material-icons left fa fa-location-arrow"></i>
+                    <span>Add New Location</span>
+                  </a>
+                </ul>
+              </li>
             </div>
           </nav>
-        </div>
       </header>
       <main>
         <div ui-view></div>
