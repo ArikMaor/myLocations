@@ -1,3 +1,8 @@
-<div>
-  hello!
+<div class="categories-view">
+  <ul>
+    <li ng-repeat="category in categories.list track by $index">
+      {{category}}
+    </li>
+  </ul>
 </div>
+

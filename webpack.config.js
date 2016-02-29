@@ -58,6 +58,7 @@ module.exports = {
       'jQuery': 'jquery',
       'window.jQuery': 'jquery'
     }),
+    new webpack.NoErrorsPlugin(),
     new ExtractTextPlugin("style.css"),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
