@@ -1,7 +1,7 @@
-<div class="locations-viewer">
+<div class="locations-list">
   <ul class="collapsible popout" data-collapsible="accordion">
-    <li ng-if="locationsController.isVisible(location)"
-        ng-repeat="location in locations track by $index">
+    <li ng-if="locationsList.isVisible(location)"
+        ng-repeat="location in locationsList.locations track by $index">
         <div class="collapsible-header">{{location.name}}</div>
     </li>
   </ul>

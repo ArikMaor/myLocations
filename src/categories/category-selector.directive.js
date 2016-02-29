@@ -5,9 +5,6 @@ export default function CategorySelector() {
 
   return  {
     restrict: 'E',
-    scope: {
-      categories: "="
-    },
     controller: 'CategorySelectorController',
     controllerAs: 'categorySelector',
     template,

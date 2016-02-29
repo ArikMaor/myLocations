@@ -6,6 +6,7 @@ export default class CategorySelectorController {
     'ngInject';
 
     Object.assign(this, {
+      categories: categoryStore.all,
       _selectedCategories: categoryStore.selected
     });
   }

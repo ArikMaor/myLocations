@@ -1,8 +1,9 @@
-export default class LocationsController {
-  constructor(categoryStore) {
+export default class LocationsListController {
+  constructor(categoryStore, locationStore) {
     'ngInject';
 
     Object.assign(this, {
+      locations: locationStore.all,
       _selectedCategories: categoryStore.selected
     })
   }

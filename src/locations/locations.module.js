@@ -4,11 +4,11 @@ import angular from 'angular'
 import 'ngstorage'
 
 import LocationStore from './location.store'
-import LocationsController from './locations.controller'
-import LocationsViewer from './locations-viewer.directive'
+import LocationsListController from './locations-list.controller'
+import LocationsList from './locations-list.directive'
 
 export default angular.module('myLocations.locations', [ 'ngStorage' ])
   .service('locationStore', LocationStore)
-  .controller('LocationsController', LocationsController)
-  .directive('locationsViewer', LocationsViewer)
+  .controller('LocationsListController', LocationsListController)
+  .directive('locationsList', LocationsList)
   .name;
