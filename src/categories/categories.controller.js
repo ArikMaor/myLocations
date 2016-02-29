@@ -3,7 +3,7 @@ export default class CategoriesController {
   constructor($localStorage) {
     'ngInject';
 
-    const defaultCategories = [ 'Pubs', 'Clubs', 'Parks', 'Countries' ];
+    const defaultCategories = [ 'Pubs', 'Clubs', 'Parks', 'Countries', 'Pubs', 'Clubs', 'Parks', 'Countries', 'Pubs', 'Clubs', 'Parks', 'Countries' ];
 
     let storage = $localStorage.$default({
       categories: defaultCategories.map(category => Object.assign({}, {

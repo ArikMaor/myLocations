@@ -5,9 +5,11 @@
   ul {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 
     li {
       margin-left: 10px;
+      margin-bottom: 10px;
     }
 
   }
