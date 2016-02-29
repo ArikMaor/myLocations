@@ -16,8 +16,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /(node_modules|assets)/,
-        loader: 'babel',
-        query: {presets: ['es2015', 'stage-0']}
+        loader: 'babel?presets[]=es2015,presets[]=stage-0'
       }, {
         test: /html5shiv|webcomponents/,
         exclude: /ttf|eot|woff|svg|ico/,
