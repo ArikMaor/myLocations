@@ -1,5 +1,5 @@
 import pageNotFoundTemplate from './assets/404.html'
-import mainTemplate from './main.html'
+import mainTemplate from './views/main.html'
 
 export default function($stateProvider, $urlRouterProvider) {
   'ngInject';
