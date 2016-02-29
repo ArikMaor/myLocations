@@ -1,15 +1,14 @@
 export default class LocationsController {
-  constructor($scope) {
+  constructor(categoryStore) {
     'ngInject';
 
     Object.assign(this, {
-      _categories: $scope.categories
+      _selectedCategories: categoryStore.selected
     })
   }
 
   isVisible(location) {
     return location.categories.find(categoryId =>
-      this._categories.find(category =>
-        category.id == categoryId && category.selected));
+      this._selectedCategories.includes(categoryId));
   }
 }

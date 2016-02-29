@@ -1,8 +1,11 @@
 export default class MainController {
 
-  constructor($localStorage) {
+  constructor(categoryStore, locationStore) {
     'ngInject';
 
-    Object.assign(this, $localStorage);
+    Object.assign(this, {
+      categories: categoryStore.all,
+      locations: locationStore.all
+    });
   }
 }

@@ -1,19 +1,15 @@
 export const DEFAULT_CATEGORIES = [{
     id: 1,
-    name: 'Pubs',
-    selected: true
+    name: 'Pubs'
   }, {
     id: 2,
-    name: 'Clubs',
-    selected: true
+    name: 'Clubs'
   }, {
     id: 3,
-    name: 'Parks',
-    selected: true
+    name: 'Parks'
   }, {
     id: 4,
-    name: 'Countries',
-    selected: true
+    name: 'Countries'
 }];
 
 export const DEFAULT_LOCATIONS = [{

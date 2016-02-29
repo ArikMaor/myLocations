@@ -8,8 +8,8 @@ export default function CategorySelector() {
     scope: {
       categories: "="
     },
-    controller: 'CategoriesController',
-    controllerAs: 'categoriesController',
+    controller: 'CategorySelectorController',
+    controllerAs: 'categorySelector',
     template,
   };
 }
