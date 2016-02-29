@@ -6,7 +6,11 @@ export default function LocationsViewer() {
   return  {
     restrict: 'E',
     controller: 'LocationsController',
-    controllerAs: 'locations',
+    controllerAs: 'locationsController',
+    scope: {
+      locations: "=",
+      categories: "="
+    },
     template
   };
 }

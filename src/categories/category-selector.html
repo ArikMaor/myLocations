@@ -1,9 +1,9 @@
 <div class="category-selector">
   <ul>
-    <li ng-repeat="category in categories.list track by $index">
+    <li ng-repeat="category in categories track by category.id">
       <a class="waves-effect waves-light"
          ng-class="category.selected ? 'btn' : 'btn-flat'"
-         ng-click="categories.toggle(category)">
+         ng-click="categoriesController.toggle(category)">
         {{category.name}}
       </a>
     </li>
