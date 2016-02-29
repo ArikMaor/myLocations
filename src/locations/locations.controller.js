@@ -3,21 +3,19 @@ export default class LocationsController {
   constructor($localStorage) {
     'ngInject';
 
-    const defaultCategories = [ 'Pubs', 'Clubs', 'Parks', 'Countries', 'Pubs', 'Clubs', 'Parks', 'Countries', 'Pubs', 'Clubs', 'Parks', 'Countries' ];
+    const defaultLocations = [{
+      name: 'Home',
+      address: 'Rama 26',
+      coordinates: [ 1, 2 ],
+      categories: [ 1, 3]
+    }];
 
     let storage = $localStorage.$default({
-      categories: defaultCategories.map(category => Object.assign({}, {
-        name: category,
-        selected: true
-      }))
+      locations: defaultLocations
     });
 
     Object.assign(this, {
-      list: storage.categories
+      list: storage.locations
     });
-  }
-
-  toggle(category) {
-    category.selected = !category.selected;
   }
 }
