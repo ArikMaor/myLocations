@@ -9,6 +9,6 @@ export default class CategoryStore {
     Object.assign(this, {
       all: categories,
       selected: categories.map(category => category.id)
-    })
+    });
   }
 }

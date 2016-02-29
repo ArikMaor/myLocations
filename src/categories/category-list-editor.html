@@ -1,7 +1,12 @@
 <div class="category-list-editor">
   <ul class="collection">
-    <li ng-repeat="category in categoryListEditor.categories track by category.id">
-        <div class="collection-item">{{category.name}}</div>
+    <li class="collection-item" ng-repeat="category in categoryListEditor.categories track by category.id">
+        <div>
+          {{category.name}}
+          <a href="javascript:void(0);" class="secondary-content" ng-click='categoryListEditor.delete(category)'>
+            <i class="material-icons fa fa-trash-o"></i>
+          </a>
+        </div>
     </li>
   </ul>
 </div>
