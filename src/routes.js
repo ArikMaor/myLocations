@@ -7,9 +7,7 @@ export default function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('main', {
       url: "/",
-      template: mainTemplate,
-      controller: 'MainController',
-      controllerAs: 'main'
+      template: mainTemplate
     })
     .state('404', {
       url: "/404",

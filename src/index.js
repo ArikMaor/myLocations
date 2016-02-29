@@ -12,13 +12,11 @@ import categories from './categories/categories.module'
 import locations from './locations/locations.module'
 
 import routes from './routes'
-import MainController from './views/main.controller'
 
 export default angular.module('myLocations',
   [router, angularMaterialize, categories, locations])
   .constant('DEFAULT_CATEGORIES', DEFAULT_CATEGORIES)
   .constant('DEFAULT_LOCATIONS', DEFAULT_LOCATIONS)
-  .controller('MainController', MainController)
   .config(routes)
   .run(setDefaultValues)
   .name;
