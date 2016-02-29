@@ -1,4 +1,15 @@
 @import '../assets/style/variables';
 
 .categories-view {
+
+  ul {
+    display: flex;
+    flex-direction: row;
+
+    li {
+      margin-left: 10px;
+    }
+
+  }
+
 }
