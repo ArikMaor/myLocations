@@ -1,3 +1,4 @@
+import './category-selector.scss'
 import template from './category-selector.html'
 
 export default function CategorySelector() {

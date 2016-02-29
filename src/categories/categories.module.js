@@ -1,5 +1,3 @@
-import './categories.scss'
-
 import angular from 'angular'
 import 'ngstorage'
 
