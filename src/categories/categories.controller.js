@@ -7,8 +7,17 @@ export default class CategoriesController {
         categories: [ 'Pubs', 'Clubs', 'Parks', 'Countries' ]
       });
 
+    let categories = storage.categories.map(category => Object.create({
+      name: category,
+      selected: true
+    }));
+
     Object.assign(this, {
-      list: storage.categories
+      list: categories
     });
+  }
+
+  toggle(category) {
+    category.selected = !category.selected;
   }
 }
