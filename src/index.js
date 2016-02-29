@@ -1,13 +1,16 @@
 import './assets/style'
 
+import 'materialize-css'
+
 import angular from 'angular'
-import 'angular-ui-router'
+import angularMaterialize from 'angular-materialize'
+import router from 'angular-ui-router'
 
 import routes from './routes'
-import categoriesModule from './categories/categories.module'
-import locationsModule from './locations/locations.module'
+import categories from './categories/categories.module'
+import locations from './locations/locations.module'
 
 export default angular.module('myLocations',
-  ['ui.router', categoriesModule, locationsModule])
+  [router, angularMaterialize, categories, locations])
   .config(routes)
   .name;

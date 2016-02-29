@@ -1,11 +1,7 @@
 <div class="locations-viewer">
-  <ul>
+  <ul class="collapsible popout" data-collapsible="accordion">
     <li ng-repeat="category in categories.list track by $index">
-      <a class="waves-effect waves-light"
-         ng-class="category.selected ? 'btn' : 'btn-flat'"
-         ng-click="categories.toggle(category)">
-        {{category.name}}
-      </a>
+        <div class="collapsible-header">{{category.name}}</div>
     </li>
   </ul>
 </div>

@@ -53,6 +53,7 @@ module.exports = {
   },
   plugins: [
     new webpack.NormalModuleReplacementPlugin(/^jquery/, path.join(__dirname, './node_modules/jquery/dist/jquery.min')),
+    new webpack.NormalModuleReplacementPlugin(/^materialize-css/, '../node_modules/materialize-css/dist/js/materialize.min'),
     new webpack.ProvidePlugin({
       '$': 'jquery',
       'jQuery': 'jquery',
