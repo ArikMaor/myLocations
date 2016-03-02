@@ -1,11 +1,8 @@
+<div class="map-container">
+  <ui-gmap-google-map center='main.selectedLocationCoords' zoom='8'></ui-gmap-google-map>
+</div>
 <div class="main-view container">
   <category-selector categories="main.categories" selected-categories="main.categoryFilter"></category-selector>
-  <div class="row">
-    <div class="col s6">
-      <locations-list locations="main.locations" category-filter="main.categoryFilter" onLocationSelected="main.selectLocation"></locations-list>
-    </div>
-    <div class="col s6">
-      <ui-gmap-google-map center='main.selectedLocationCoords' zoom='8'></ui-gmap-google-map>
-    </div>
-  </div>
+  <locations-list locations="main.locations" category-filter="main.categoryFilter" onLocationSelected="main.onLocationSelected"></locations-list>
 </div>
+
