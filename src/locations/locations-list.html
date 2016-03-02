@@ -1,7 +1,7 @@
 <div class="locations-list">
   <ul class="collapsible popout" data-collapsible="accordion" watch>
     <li class="collection-item"
-        ng-click="locationsList.onSelected(location)"
+        ng-click="locationsList.select(location)"
         ng-if="locationsList.isVisible(location)"
         ng-repeat="location in locationsList.locations track by location.name">
         <div class="collapsible-header">

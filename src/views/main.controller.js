@@ -1,7 +1,7 @@
 export default class MainController {
 
   groupLocations = false
-  selectedLocation = undefined;
+  selectedLocationCoords = {undefined};
 
   constructor(categoryService, locationService) {
     'ngInject';
@@ -14,9 +14,11 @@ export default class MainController {
       locations,
       categoryFilter: Array.from(categories)
     });
+
+    this.onLocationSelected(locations[0]);
   }
 
-  selectLocation(location) {
-    this.selectedLocation = location;
+  onLocationSelected(location) {
+    Object.assign(this.selectedLocationCoords, location.coordinates);
   }
 }
