@@ -5,12 +5,9 @@
         ng-repeat="location in locationsList.locations track by location.name">
         <div class="collapsible-header">
           <h5>{{location.name}}</h5>
-          <div>
-            <span class='chip' ng-repeat='category in location.categories'>{{category}}&nbsp;</span>
-          </div>
         </div>
         <div class="collapsible-body">
-          <p>{{location.address}}</p>
+          <p>{{location.address}}<span class='chip' ng-repeat='category in location.categories'>{{category}}&nbsp;</span></p>
         </div>
     </li>
   </ul>
