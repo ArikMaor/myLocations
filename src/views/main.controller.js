@@ -1,7 +1,7 @@
 export default class MainController {
 
   groupLocations = false
-  selectedLocationCoords = {undefined};
+  selectedLocationCoords = {};
 
   constructor(categoryService, locationService) {
     'ngInject';

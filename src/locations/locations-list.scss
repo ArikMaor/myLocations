@@ -6,10 +6,23 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    h5 {
+      margin-bottom: -15px;
+    }
+
+    .location-address {
+      margin-top: 0;
+      color: grey;
+    }
   }
 
   .chip {
-    margin-left: 5px;
+    margin-left: 2px;
+    line-height: 18px;
+    height: 16px;
+    margin-top: 15px;
+    border-radius: 15px;
   }
 
 }

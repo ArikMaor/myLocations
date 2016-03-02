@@ -5,10 +5,13 @@
         ng-if="locationsList.isVisible(location)"
         ng-repeat="location in locationsList.locations track by location.name">
         <div class="collapsible-header">
-          <h5>{{location.name}}</h5>
-        </div>
-        <div class="collapsible-body">
-          <p>{{location.address}}<span class='chip' ng-repeat='category in location.categories'>{{category}}&nbsp;</span></p>
+          <div class="location-details">
+            <h5>{{location.name}}</h5>
+            <span class="location-address">{{location.address}}</span>
+          </div>
+          <div class="secondary-content">
+            <span class='chip' ng-repeat='category in location.categories'>{{category}}&nbsp;</span>
+          </div>
         </div>
     </li>
   </ul>
