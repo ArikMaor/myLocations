@@ -57,7 +57,8 @@ module.exports = {
     new webpack.ProvidePlugin({
       '$': 'jquery',
       'jQuery': 'jquery',
-      'window.jQuery': 'jquery'
+      'window.jQuery': 'jquery',
+      '_': 'underscore'
     }),
     new webpack.NoErrorsPlugin(),
     new ExtractTextPlugin("style.css"),
