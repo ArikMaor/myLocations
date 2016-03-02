@@ -1,3 +1,4 @@
+import './locations-list.scss'
 import template from './locations-list.html'
 
 export default function LocationsList() {

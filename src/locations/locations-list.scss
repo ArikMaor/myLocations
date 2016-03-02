@@ -1,0 +1,15 @@
+@import '../assets/style/variables';
+
+.locations-list {
+
+  .collection-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .chip {
+      margin-left: 5px;
+    }
+  }
+
+}

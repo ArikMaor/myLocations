@@ -1,5 +1,3 @@
-import './locations.scss'
-
 import angular from 'angular'
 import 'ngstorage'
 
