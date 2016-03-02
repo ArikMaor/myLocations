@@ -1,6 +1,9 @@
 export default class MainController {
 
-  constructor(categoryService, locationService, $scope) {
+  groupLocations = false
+  selectedLocation = undefined;
+
+  constructor(categoryService, locationService) {
     'ngInject';
 
     let categories = categoryService.getAll();
@@ -9,10 +12,11 @@ export default class MainController {
     Object.assign(this, {
       categories,
       locations,
-      categoryFilter: Array.from(categories),
-      groupLocations: false
+      categoryFilter: Array.from(categories)
     });
+  }
 
-    $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+  selectLocation(location) {
+    this.selectedLocation = location;
   }
 }

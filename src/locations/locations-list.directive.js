@@ -10,7 +10,8 @@ export default function LocationsList() {
     controllerAs: 'locationsList',
     scope: {
       locations: '=',
-      categoryFilter: '=?'
+      categoryFilter: '=?',
+      onLocationSelected: '&'
     },
     template,
     link
@@ -22,4 +23,6 @@ function link(scope, element, attr, locationsList) {
     locations: scope.locations,
     categoryFilter: scope.categoryFilter
   });
+
+  locationsList.onSelected(scope.onLocationSelected);
 }
