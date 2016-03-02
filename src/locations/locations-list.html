@@ -1,14 +1,16 @@
 <div class="locations-list">
-  <ul class="collection">
+  <ul class="collapsible popout" data-collapsible="accordion" watch>
     <li class="collection-item"
         ng-if="locationsList.isVisible(location)"
         ng-repeat="location in locationsList.locations track by location.name">
-        <div>
-          <h5 class="title">{{location.name}}</h5>
-          <span>{{location.address}}</span>
+        <div class="collapsible-header">
+          <h5>{{location.name}}</h5>
+          <div>
+            <span class='chip' ng-repeat='category in location.categories'>{{category}}&nbsp;</span>
+          </div>
         </div>
-        <div>
-          <span class='secondary-content chip' ng-repeat='category in location.categories'>{{category}}&nbsp;</span>
+        <div class="collapsible-body">
+          <p>{{location.address}}</p>
         </div>
     </li>
   </ul>
