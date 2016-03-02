@@ -7,6 +7,18 @@ export default function LocationsList() {
     restrict: 'E',
     controller: 'LocationsListController',
     controllerAs: 'locationsList',
-    template
+    scope: {
+      locations: '=',
+      categoryFilter: '=?'
+    },
+    template,
+    link
   };
+}
+
+function link(scope, element, attr, locationsList) {
+  Object.assign(locationsList, {
+    locations: scope.locations,
+    categoryFilter: scope.categoryFilter
+  });
 }

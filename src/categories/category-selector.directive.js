@@ -8,6 +8,18 @@ export default function CategorySelector() {
     restrict: 'E',
     controller: 'CategorySelectorController',
     controllerAs: 'categorySelector',
+    scope: {
+      categories: '=',
+      selectedCategories: '='
+    },
     template,
+    link
   };
+}
+
+function link(scope, element, attr, categorySelector) {
+  Object.assign(categorySelector, {
+    categories: scope.categories,
+    selectedCategories: scope.selectedCategories
+  });
 }

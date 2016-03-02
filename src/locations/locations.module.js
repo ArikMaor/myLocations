@@ -3,12 +3,12 @@ import './locations.scss'
 import angular from 'angular'
 import 'ngstorage'
 
-import LocationStore from './location.store'
+import LocationService from './location.service'
 import LocationsListController from './locations-list.controller'
 import LocationsList from './locations-list.directive'
 
 export default angular.module('myLocations.locations', [ 'ngStorage' ])
-  .service('locationStore', LocationStore)
+  .service('locationService', LocationService)
   .controller('LocationsListController', LocationsListController)
   .directive('locationsList', LocationsList)
   .name;

@@ -1,29 +1,21 @@
 export default class CategorySelectorController {
 
-  _selectedCategories = [];
-
-  constructor(categoryStore) {
-    'ngInject';
-
-    Object.assign(this, {
-      categories: categoryStore.all,
-      _selectedCategories: categoryStore.selected
-    });
-  }
+  categories = []
+  selectedCategories = []
 
   toggle(category) {
-    let selectedCategories = this._selectedCategories;
-    let categoryId = category.id;
+    let selectedCategories = this.selectedCategories;
 
-    let index = selectedCategories.indexOf(categoryId);
+    let index = selectedCategories.indexOf(category);
     if (index < 0) {
-      selectedCategories.push(categoryId)
+      selectedCategories.push(category)
     } else {
       selectedCategories.splice(index, 1)
     }
   }
 
   isSelected(category) {
-    return this._selectedCategories.includes(category.id);
+    return this.selectedCategories.includes(category);
   }
+
 }

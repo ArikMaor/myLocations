@@ -1,5 +1,6 @@
 import pageNotFoundTemplate from './assets/404.html'
 import mainTemplate from './views/main.html'
+import mainController from './views/main.controller.js'
 import categoriesTemplate from './views/categories.html'
 
 export default function($stateProvider, $urlRouterProvider) {
@@ -8,7 +9,9 @@ export default function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('main', {
       url: "/",
-      template: mainTemplate
+      template: mainTemplate,
+      controller: mainController,
+      controllerAs: 'main'
     })
     .state('categories', {
       url: "/categories",

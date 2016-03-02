@@ -1,10 +1,10 @@
 <div class="category-selector">
   <ul>
-    <li ng-repeat="category in categorySelector.categories track by category.id">
+    <li ng-repeat="category in categorySelector.categories track by category">
       <a class="waves-effect waves-light"
          ng-class="categorySelector.isSelected(category) ? 'btn' : 'btn-flat'"
          ng-click="categorySelector.toggle(category)">
-        {{category.name}}
+        {{category}}
       </a>
     </li>
   </ul>

@@ -1,15 +1,12 @@
 export default class LocationsListController {
-  constructor(categoryStore, locationStore) {
-    'ngInject';
 
-    Object.assign(this, {
-      locations: locationStore.all,
-      _selectedCategories: categoryStore.selected
-    })
-  }
+  categoryFilter = undefined
+  locations = []
 
   isVisible(location) {
-    return location.categories.find(categoryId =>
-      this._selectedCategories.includes(categoryId));
+    let filter = this.categoryFilter;
+
+    return !filter || location.categories.find(category =>
+      filter.includes(category));
   }
 }
