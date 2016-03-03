@@ -16,7 +16,10 @@ export default class CategoryService {
   }
 
   add(category) {
-    this.categories.push(category);
+    if (category) {
+      let categories = this.categories;
+      categories.push(category) && !categories.includes(category);
+    }
   }
 
   remove(category) {

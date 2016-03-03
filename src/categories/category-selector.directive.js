@@ -1,4 +1,6 @@
 import './category-selector.scss'
+import 'ng-cache!./new-category-modal.html'
+import controller from './category-selector.controller'
 import template from './category-selector.html'
 
 export default function CategorySelector() {
@@ -6,12 +8,12 @@ export default function CategorySelector() {
 
   return  {
     restrict: 'E',
-    controller: 'CategorySelectorController',
     controllerAs: 'categorySelector',
     scope: {
       categories: '=',
       selectedCategories: '='
     },
+    controller,
     template,
     link
   };

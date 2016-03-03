@@ -3,6 +3,14 @@ export default class CategorySelectorController {
   categories = []
   selectedCategories = []
 
+  constructor(categoryService) {
+    'ngInject';
+
+    Object.assign(this, {
+      categoryService
+    });
+  }
+
   toggle(category) {
     let selectedCategories = this.selectedCategories;
 
@@ -18,4 +26,7 @@ export default class CategorySelectorController {
     return this.selectedCategories.includes(category);
   }
 
+  addNewCategory(category) {
+    this.categoryService.add(category);
+  }
 }
