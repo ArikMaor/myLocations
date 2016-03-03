@@ -4,8 +4,6 @@ import './views/main.scss'
 import mainTemplate from './views/main.html'
 import mainController from './views/main.controller.js'
 
-import categoriesTemplate from './views/categories.html'
-
 export default function($stateProvider, $urlRouterProvider) {
   'ngInject';
 
@@ -16,10 +14,10 @@ export default function($stateProvider, $urlRouterProvider) {
       controller: mainController,
       controllerAs: 'main'
     })
-    .state('categories', {
-      url: "/categories",
-      template: categoriesTemplate
-    })
+    // .state('categories', {
+    //   url: "/categories",
+    //   template: categoriesTemplate
+    // })
     .state('404', {
       url: "/404",
       template: pageNotFoundTemplate

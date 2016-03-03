@@ -2,23 +2,22 @@ export default class CategoryService {
   constructor($localStorage, DEFAULT_CATEGORIES) {
     'ngInject';
 
-    let categories = $localStorage.$default({
+    let storage = $localStorage.$default({
       categories: DEFAULT_CATEGORIES
-    }).categories;
+    });
 
     Object.assign(this, {
-      categories
+      _storage: storage
     });
   }
 
   getAll() {
-    return this.categories;
+    return this._storage.categories;
   }
 
   add(category) {
-    if (category) {
-      let categories = this.categories;
-      categories.push(category) && !categories.includes(category);
+    if (category && !this._storage.categories.includes(category)) {
+      this._storage.categories.push(category);
     }
   }
 

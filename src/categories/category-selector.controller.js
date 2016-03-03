@@ -1,5 +1,6 @@
 export default class CategorySelectorController {
 
+  newCategoryName = ''
   categories = []
   selectedCategories = []
 
@@ -26,7 +27,10 @@ export default class CategorySelectorController {
     return this.selectedCategories.includes(category);
   }
 
-  addNewCategory(category) {
+  addNewCategory() {
+    let category = this.newCategoryName
     this.categoryService.add(category);
+    this.selectedCategories.push(category);
+    this.newCategoryName = '';
   }
 }

@@ -8,7 +8,7 @@
       </a>
     </li>
     <li>
-    <a href='#new-category-modal' modal class="waves-effect waves-circle waves-light btn-floating">
+    <a href='#new-category-modal' class="waves-effect waves-circle waves-light btn-floating" modal>
       <i class="material-icons">add</i>
     </a>
     </li>
@@ -20,11 +20,11 @@
     <div class="modal-content">
       <h5>Add new category<h5>
       <div input-field>
-        <input type="text" ng-model="newCategory" length="20"/>
+        <input type="text" id="new-category-name" ng-model="categorySelector.newCategoryName" length="20"/>
         <label>Category name</label>
       </div>
     </div>
     <div class="modal-footer">
-        <a href="#!" ng-click='categorySelector.addNewCategory(newCategory)' class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
+        <a href="#!" ng-click='categorySelector.addNewCategory()' class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
     </div>
 </div>
