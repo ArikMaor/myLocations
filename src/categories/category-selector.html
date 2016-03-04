@@ -1,10 +1,11 @@
 <div class="category-selector">
   <ul>
     <li ng-repeat="category in categorySelector.categories track by category">
-      <a class="waves-effect waves-light"
-         ng-class="categorySelector.isSelected(category) ? 'btn' : 'btn-flat'"
+      <a class="chip waves-effect waves-light"
+         ng-class="{active: categorySelector.isSelected(category)}"
          ng-click="categorySelector.toggle(category)">
         {{category}}
+        <i class="material-icons">close</i>
       </a>
     </li>
     <li>

@@ -1,3 +1,5 @@
+@import '../assets/style/variables';
+
 .category-selector {
 
   ul {
@@ -8,6 +10,12 @@
 
     li {
       margin-bottom: 10px;
+
+      .chip {
+        &.active {
+          background-color: $success-color;
+        }
+      }
     }
 
   }
