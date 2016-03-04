@@ -12,7 +12,7 @@ export default class LocationService {
   }
 
   getAll() {
-    return this.locations;
+    return Array.from(this.locations);
   }
 
   add(location) {
@@ -21,6 +21,6 @@ export default class LocationService {
 
   remove(location) {
     let locations = this.locations;
-    locations.splice(locations.index(location), 1);
+    locations.splice(locations.indexOf(location), 1);
   }
 }
