@@ -30,10 +30,15 @@
   </div>
   <div class="row">
     <div class="z-depth-2">
-      <ui-gmap-google-map center='location.coordinates'
+      <ui-gmap-google-map center='location.mapCenter'
       zoom='8'
       options="{disableDefaultUI: true}"
-      ></ui-gmap-google-map>
+      >
+        <ui-gmap-marker
+                idKey='location-view-marker-id'
+                coords='location.obj.coordinates'>
+        </ui-gmap-marker>
+      </ui-gmap-google-map>
     </div>
   </div>
   <div class="row">

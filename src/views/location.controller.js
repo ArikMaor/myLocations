@@ -3,20 +3,23 @@ export default class LocationController {
   obj = {
     name: '',
     address: '',
-    categories: []
+    categories: [],
+    coordinates: {}
   }
 
   constructor(DEFAULT_COORDINATES, $state, $stateParams, categoryService, locationService) {
     'ngInject';
 
     Object.assign(this, {
-      coordinates: DEFAULT_COORDINATES,
+      mapCenter: Object.assign({}, DEFAULT_COORDINATES),
 
       _allCategories: categoryService.getAll(),
       _categoryService: categoryService,
       _locationService: locationService,
       $state
     });
+
+    this.obj.coordinates = Object.assign({}, DEFAULT_COORDINATES);
   }
 
   availableCategories() {
