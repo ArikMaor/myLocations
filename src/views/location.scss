@@ -5,6 +5,12 @@
     height: 200px;
   }
 
+  .input-field {
+    label {
+      z-index: -1;
+    }
+  }
+
   .category-chip {
     margin-right: 5px;
   }
