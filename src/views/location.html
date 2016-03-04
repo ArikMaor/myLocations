@@ -1,5 +1,5 @@
 <div class="location-view container">
-  <form>
+  <form ng-submit="location.save()">
     <div class="row">
       <div input-field>
         <input type="text" ng-model="location.obj.name" length="150">
@@ -14,25 +14,30 @@
     </div>
     <div class="row">
       <select material-select class="browser-default"
-              ng-change="location.addCategory(newCategory); newCategory=''"
-              ng-model='newCategory'>
-        <option value disabled selected>Add a category</option>
-        <option ng-repeat="category in location.availableCategories() track by category">
-          {{category}}
-        </option>
-      </select>
-    </div>
-    <div class="row">
-      <span class="category-chip chip" ng-repeat='category in location.obj.categories track by category'>
+      ng-change="location.addCategory(newCategory); newCategory=''"
+      ng-model='newCategory'>
+      <option value disabled selected>Add a category</option>
+      <option ng-repeat="category in location.availableCategories() track by category">
         {{category}}
-        <i ng-click="location.removeCategory(category)" class="material-icons">close</i>
-      </span>
-    </div>
-  </form>
-  <div class="z-depth-2">
-    <ui-gmap-google-map center='location.coordinates'
-    zoom='8'
-    options="{disableDefaultUI: true}"
-    ></ui-gmap-google-map>
+      </option>
+    </select>
   </div>
+  <div class="row">
+    <span class="category-chip chip" ng-repeat='category in location.obj.categories track by category'>
+      {{category}}
+      <i ng-click="location.removeCategory(category)" class="material-icons">close</i>
+    </span>
+  </div>
+  <div class="row">
+    <div class="z-depth-2">
+      <ui-gmap-google-map center='location.coordinates'
+      zoom='8'
+      options="{disableDefaultUI: true}"
+      ></ui-gmap-google-map>
+    </div>
+  </div>
+  <div class="row">
+    <input type="submit" class="btn right" value="Save" />
+  </div>
+</form>
 </div>

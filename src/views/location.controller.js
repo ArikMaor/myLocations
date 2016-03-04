@@ -6,14 +6,16 @@ export default class LocationController {
     categories: []
   }
 
-  constructor(DEFAULT_COORDINATES, $stateParams, categoryService) {
+  constructor(DEFAULT_COORDINATES, $state, $stateParams, categoryService, locationService) {
     'ngInject';
 
     Object.assign(this, {
       coordinates: DEFAULT_COORDINATES,
 
       _allCategories: categoryService.getAll(),
-      _categoryService: categoryService
+      _categoryService: categoryService,
+      _locationService: locationService,
+      $state
     });
   }
 
@@ -29,5 +31,10 @@ export default class LocationController {
   removeCategory(category) {
     let categories = this.obj.categories;
     categories.splice(categories.indexOf(category), 1);
+  }
+
+  save() {
+    this._locationService.add(this.obj);
+    this.$state.go('main');
   }
 }
