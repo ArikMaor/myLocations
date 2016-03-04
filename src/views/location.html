@@ -13,9 +13,12 @@
       </div>
     </div>
     <div class="row">
-      <select class="" ng-model="location.obj.categories" material-select>
-        <option selected>Add a category</option>
-        <option ng-repeat="category in location.categories">
+      <span class="category-chip chip" ng-repeat='category in location.obj.categories track by $index'>{{category}}</span>
+    </div>
+    <div class="row">
+      <select class="browser-default" material-select>
+        <option disabled>Add a category</option>
+        <option ng-repeat="category in location.allCategories track by category">
           {{category}}
         </option>
       </select>

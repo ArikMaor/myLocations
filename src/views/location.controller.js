@@ -11,7 +11,7 @@ export default class LocationController {
 
     Object.assign(this, {
       coordinates: DEFAULT_COORDINATES,
-      categories: categoryService.getAll(),
+      allCategories: categoryService.getAll(),
 
       _categoryService: categoryService
     });
