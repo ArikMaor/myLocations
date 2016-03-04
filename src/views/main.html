@@ -1,7 +1,7 @@
+<div class="map-container">
+  <ui-gmap-google-map center='main.selectedLocationCoords' zoom='8' options="{disableDefaultUI: true}"></ui-gmap-google-map>
+</div>
 <div class='main-view'>
-  <div class="map-container">
-    <ui-gmap-google-map center='main.selectedLocationCoords' zoom='8'></ui-gmap-google-map>
-  </div>
   <div class="main-view-content container">
     <category-selector categories="main.categories" selected-categories="main.categoryFilter"></category-selector>
     <locations-list locations="main.locations" category-filter="main.categoryFilter" onLocationSelected="main.onLocationSelected"></locations-list>

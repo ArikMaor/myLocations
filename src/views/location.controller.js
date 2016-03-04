@@ -1,7 +1,14 @@
-export default class MainController {
+export default class LocationController {
 
-  constructor() {
+  name = ''
+  address = ''
 
+  constructor(DEFAULT_COORDINATES, $stateParams) {
+    'ngInject';
+
+    Object.assign(this, {
+      coordinates: DEFAULT_COORDINATES
+    });
   }
 
 }

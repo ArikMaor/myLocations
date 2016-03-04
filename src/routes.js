@@ -1,6 +1,7 @@
 import pageNotFoundTemplate from './assets/404.html'
 
 import './views/main.scss'
+import './views/location.scss'
 import mainTemplate from './views/main.html'
 import mainController from './views/main.controller.js'
 import locationTemplate from './views/location.html'
@@ -19,7 +20,8 @@ export default function($stateProvider, $urlRouterProvider) {
     .state('location', {
       url: "/location/:name",
       template: locationTemplate,
-      controller: locationController
+      controller: locationController,
+      controllerAs: 'location'
     })
     .state('404', {
       url: "/404",

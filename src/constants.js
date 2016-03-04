@@ -21,3 +21,5 @@ export const DEFAULT_LOCATIONS = [{
   coordinates: { latitude: 45, longitude: -73 },
   categories: [ 'Pubs', 'Parks' ]
 }];
+
+export const DEFAULT_COORDINATES = { latitude: 45, longitude: -73 };

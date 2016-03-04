@@ -8,7 +8,7 @@ import router from 'angular-ui-router'
 import 'angular-simple-logger'
 import 'angular-google-maps'
 
-import { DEFAULT_CATEGORIES, DEFAULT_LOCATIONS } from './constants'
+import { DEFAULT_CATEGORIES, DEFAULT_LOCATIONS, DEFAULT_COORDINATES } from './constants'
 
 import categories from './categories/categories.module'
 import locations from './locations/locations.module'
@@ -19,6 +19,7 @@ export default angular.module('myLocations',
   [router, angularMaterialize, 'uiGmapgoogle-maps', categories, locations])
   .constant('DEFAULT_CATEGORIES', DEFAULT_CATEGORIES)
   .constant('DEFAULT_LOCATIONS', DEFAULT_LOCATIONS)
+  .constant('DEFAULT_COORDINATES', DEFAULT_COORDINATES)
   .config(routes)
   .run(setDefaultValues)
   .name;
