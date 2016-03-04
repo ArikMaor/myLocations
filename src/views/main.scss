@@ -10,6 +10,8 @@ main > .map-container .angular-google-map-container {
 .main-view {
   position: relative;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 
   .main-view-content {
     display: flex;

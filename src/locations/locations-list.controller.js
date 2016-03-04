@@ -3,6 +3,16 @@ export default class LocationsListController {
   categoryFilter = undefined
   locations = []
 
+  constructor(locationService) {
+    'ngInject';
+
+    Object.assign(this, {
+      _locationService: locationService
+    });
+
+    this.locations = locationService.getAll();
+  }
+
   isVisible(location) {
     let filter = this.categoryFilter;
 
@@ -17,5 +27,12 @@ export default class LocationsListController {
 
   select(location) {
     this._onSelected.forEach(callback => callback(location));
+  }
+
+  delete(location) {
+    let locations = this.locations;
+
+    locations.splice(locations.indexOf(location), 1);
+    this._locationService.remove(location);
   }
 }

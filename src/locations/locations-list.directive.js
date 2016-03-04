@@ -9,7 +9,6 @@ export default function LocationsList() {
     controller: 'LocationsListController',
     controllerAs: 'locationsList',
     scope: {
-      locations: '=',
       categoryFilter: '=?',
       onLocationSelected: '&'
     },
@@ -20,7 +19,6 @@ export default function LocationsList() {
 
 function link(scope, element, attr, locationsList) {
   Object.assign(locationsList, {
-    locations: scope.locations,
     categoryFilter: scope.categoryFilter
   });
 
