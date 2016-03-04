@@ -13,15 +13,20 @@
       </div>
     </div>
     <div class="row">
-      <span class="category-chip chip" ng-repeat='category in location.obj.categories track by $index'>{{category}}</span>
-    </div>
-    <div class="row">
-      <select class="browser-default" material-select>
-        <option disabled>Add a category</option>
-        <option ng-repeat="category in location.allCategories track by category">
+      <select material-select class="browser-default"
+              ng-change="location.addCategory(newCategory); newCategory=''"
+              ng-model='newCategory'>
+        <option value disabled selected>Add a category</option>
+        <option ng-repeat="category in location.availableCategories() track by category">
           {{category}}
         </option>
       </select>
+    </div>
+    <div class="row">
+      <span class="category-chip chip" ng-repeat='category in location.obj.categories track by category'>
+        {{category}}
+        <i ng-click="location.removeCategory(category)" class="material-icons">close</i>
+      </span>
     </div>
   </form>
   <div class="z-depth-2">
