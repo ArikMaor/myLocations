@@ -15,7 +15,6 @@ npm run dev
   2. address (required)
   3. categories (at least 1 selected)
   4. coords (required)
-3. edit location view
 4. fix location select/submit bug
 5. move categories to side bar
 6. Selected view

@@ -15,6 +15,11 @@ export default class LocationService {
     return Array.from(this.locations);
   }
 
+  getOne(locationName) {
+    return this.locations.find(location =>
+      location.name.toLowerCase() == locationName.toLowerCase());
+  }
+
   add(location) {
     this.locations.push(location);
   }
@@ -22,5 +27,10 @@ export default class LocationService {
   remove(location) {
     let locations = this.locations;
     locations.splice(locations.indexOf(location), 1);
+  }
+
+  update(location) {
+    let existing_location = this.getOne(location.name);
+    Object.assign(existing_location, location);
   }
 }
