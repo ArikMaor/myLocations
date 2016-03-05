@@ -30,9 +30,11 @@ export default class LocationsListController {
   }
 
   delete(location) {
-    let locations = this.locations;
+    if (confirm(`Are you sure you want to delete "${location.name}"?`)) {
+      let locations = this.locations;
 
-    locations.splice(locations.indexOf(location), 1);
-    this._locationService.remove(location);
+      this._locationService.remove(location);
+      locations.splice(locations.indexOf(location), 1);
+    }
   }
 }

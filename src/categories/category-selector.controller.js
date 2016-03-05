@@ -35,6 +35,8 @@ export default class CategorySelectorController {
   }
 
   delete(category) {
-    this.categoryService.remove(category);
+    if (confirm(`Are you sure you want to delete "${category}"?`)) {
+      this.categoryService.remove(category);
+    }
   }
 }
