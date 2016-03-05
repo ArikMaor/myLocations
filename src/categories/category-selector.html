@@ -1,17 +1,19 @@
-<div class="category-selector">
+<div id="category-selector" class="category-selector side-nav fixed">
   <ul>
-    <li ng-repeat="category in categorySelector.categories track by category">
-      <a class="chip waves-effect waves-light"
-         ng-class="{active: categorySelector.isSelected(category)}"
-         ng-click="categorySelector.toggle(category)">
-        {{category}}
-        <i ng-click="categorySelector.delete(category)" class="material-icons">close</i>
-      </a>
-    </li>
-    <li>
-    <a href='#new-category-modal' class="waves-effect waves-circle waves-light btn-floating" modal>
-      <i class="material-icons">add</i>
-    </a>
-    </li>
+      <li ng-repeat="category in categorySelector.categories track by category"
+          ng-class="{active: categorySelector.isSelected(category)}"
+          ng-click="categorySelector.toggle(category)"
+          class="waves-effect waves-purple">
+        <a>
+          {{category}}
+        </a>
+        <i ng-click="categorySelector.delete(category)" class="material-icons secondary-content">delete</i>
+      </li>
+      <li>
+        <a href='#new-category-modal'>
+          Add new category
+        </a>
+        <i class="material-icons secondary-content">add</i>
+      <li>
   </ul>
 </div>
