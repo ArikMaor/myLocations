@@ -11,7 +11,10 @@
           </div>
           <div class="secondary-content">
             <span class='chip' ng-repeat='category in location.categories'>{{category}}&nbsp;</span>
-            <span class='right'><a href="javascript:void(0);" ng-click="locationsList.delete(location)"><i class="material-icons">delete</i></a></span>
+            <span class='right'>
+              <i ng-click="locationsList.delete(location)" class="material-icons">delete</i>
+              <i ng-click="locationsList.edit(location)" class="material-icons">edit</i>
+            </span>
           </div>
         </div>
     </li>
