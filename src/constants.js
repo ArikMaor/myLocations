@@ -26,4 +26,4 @@ export const DEFAULT_LOCATIONS = [{
   categories: [ 'Pubs', 'Parks' ]
 }];
 
-export const DEFAULT_COORDINATES = { latitude: 45, longitude: -73 };
+export const DEFAULT_COORDINATES = { latitude: 31.046051, longitude: 34.85161199999993 };

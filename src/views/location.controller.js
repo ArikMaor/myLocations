@@ -15,15 +15,16 @@ export default class LocationController {
   constructor(DEFAULT_COORDINATES, $state, $stateParams, categoryService, locationService) {
     'ngInject';
 
-    if ($stateParams.locationId) {
-      let location = locationService.getOne(parseInt($stateParams.locationId));
-      Object.assign(this.obj, location ? location : {
-        coordinates: Object.assign({}, DEFAULT_COORDINATES)
-      });
-    }
+    let location = $stateParams.locationId ?
+      locationService.getOne(parseInt($stateParams.locationId)) :
+      undefined;
+
+    Object.assign(this.obj, location ? location : {
+      coordinates: Object.assign({}, DEFAULT_COORDINATES)
+    });
 
     Object.assign(this, {
-      mapCenter: this.obj.coordinates,
+      mapCenter: Object.assign({}, this.obj.coordinates),
 
       onPlaceSelected: this.onPlaceSelected.bind(this),
 
@@ -62,6 +63,7 @@ export default class LocationController {
     if (error) {
       console.log(`error: ${error}`);
     } else {
+      console.info(window.x = location_details);
       let location_coords = location_details.geometry.location;
       this.obj.coordinates = {
         latitude: location_coords.lat(),
