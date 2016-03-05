@@ -15,10 +15,10 @@ npm run dev
   2. address (required)
   3. categories (at least 1 selected)
   4. coords (required)
-4. fix location select/submit bug
-5. move categories to side bar
-6. Selected view
+3. fix location select/submit bug
+4. move categories to side bar
+5. Selected view
   1. show only selected at top and hide others
   2. Display marker on map
   3. add delete/edit buttons
-7. Enable collapsible behavior
+6. Enable collapsible behavior
