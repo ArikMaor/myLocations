@@ -21,3 +21,4 @@ npm run dev
   1. show only selected at top and hide others
   2. Display marker on map
   3. add delete/edit buttons
+7. Enable collapsible behavior
