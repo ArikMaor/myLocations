@@ -14,9 +14,6 @@ export default function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('main', {
       url: "/",
-      template: mainTemplate,
-      controller: mainController,
-      controllerAs: 'main',
       views: {
         main: {
           template: mainTemplate,
@@ -24,17 +21,19 @@ export default function($stateProvider, $urlRouterProvider) {
           controllerAs: 'main'
         },
         topbar: {
-          template: mainTopbarTemplate,
-          controller: mainController,
-          controllerAs: 'main'
+          template: mainTopbarTemplate
         }
       }
     })
     .state('location', {
       url: "/location/:locationId",
-      template: locationTemplate,
-      controller: locationController,
-      controllerAs: 'location'
+      views: {
+        main: {
+          template: locationTemplate,
+          controller: locationController,
+          controllerAs: 'location'
+        }
+      }
     })
     .state('404', {
       url: "/404",
