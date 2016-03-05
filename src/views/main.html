@@ -3,7 +3,20 @@
 </div>
 <div class='main-view'>
   <div class="main-view-content container">
-    <category-selector></category-selector>
+
+    <div id="new-category-modal" class="modal">
+      <div class="modal-content">
+        <h5>Add new category<h5>
+        <div input-field>
+          <input type="text" id="new-category-name" ng-model="categorySelector.newCategoryName" length="20"/>
+          <label>Category name</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+          <a href="javascript:void(0);" ng-click='categorySelector.addNewCategory()' class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
+      </div>
+    </div>
+
     <locations-list onLocationSelected="main.onLocationSelected"></locations-list>
   </div>
   <div class="container">
