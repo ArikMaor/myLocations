@@ -7,6 +7,8 @@ export default class MainController {
   constructor(DEFAULT_COORDINATES, categoryService, locationService) {
     'ngInject';
 
+    console.log('yo!');
+
     let categories = categoryService.getAll();
 
     Object.assign(this, {

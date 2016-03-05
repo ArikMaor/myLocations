@@ -1,36 +1,31 @@
 export default class CategorySelectorController {
 
   newCategoryName = ''
-  categories = []
-  selectedCategories = []
 
-  constructor(categoryService) {
+  constructor(categoryService, selectedCategoriesService) {
     'ngInject';
 
     Object.assign(this, {
-      categoryService
+      categories: categoryService.getAll(),
+      selectedCategories: selectedCategoriesService.list,
+
+      categoryService,
+      selectedCategoriesService
     });
   }
 
   toggle(category) {
-    let selectedCategories = this.selectedCategories;
-
-    let index = selectedCategories.indexOf(category);
-    if (index < 0) {
-      selectedCategories.push(category)
-    } else {
-      selectedCategories.splice(index, 1)
-    }
+    this.selectedCategoriesService.toggle(category);
   }
 
   isSelected(category) {
-    return this.selectedCategories.includes(category);
+    return this.selectedCategoriesService.isSelected(category);
   }
 
   addNewCategory() {
-    let category = this.newCategoryName
+    let category = this.newCategoryName;
     this.categoryService.add(category);
-    this.selectedCategories.push(category);
+    this.selectedCategoriesService.select(category);
     this.newCategoryName = '';
   }
 

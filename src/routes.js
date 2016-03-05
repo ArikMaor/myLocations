@@ -3,6 +3,7 @@ import pageNotFoundTemplate from './assets/404.html'
 import './views/main.scss'
 import './views/location.scss'
 import mainTemplate from './views/main.html'
+import mainTopbarTemplate from './views/main.topbar.html'
 import mainController from './views/main.controller.js'
 import locationTemplate from './views/location.html'
 import locationController from './views/location.controller.js'
@@ -15,7 +16,19 @@ export default function($stateProvider, $urlRouterProvider) {
       url: "/",
       template: mainTemplate,
       controller: mainController,
-      controllerAs: 'main'
+      controllerAs: 'main',
+      views: {
+        main: {
+          template: mainTemplate,
+          controller: mainController,
+          controllerAs: 'main'
+        },
+        topbar: {
+          template: mainTopbarTemplate,
+          controller: mainController,
+          controllerAs: 'main'
+        }
+      }
     })
     .state('location', {
       url: "/location/:locationId",
