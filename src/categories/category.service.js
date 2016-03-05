@@ -22,7 +22,7 @@ export default class CategoryService {
   }
 
   remove(category) {
-    let categories = this.categories;
-    categories.splice(categories.index(category), 1);
+    let categories = this._storage.categories;
+    categories.splice(categories.indexOf(category), 1);
   }
 }

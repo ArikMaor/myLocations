@@ -33,4 +33,8 @@ export default class CategorySelectorController {
     this.selectedCategories.push(category);
     this.newCategoryName = '';
   }
+
+  delete(category) {
+    this.categoryService.remove(category);
+  }
 }

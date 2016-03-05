@@ -5,7 +5,7 @@
          ng-class="{active: categorySelector.isSelected(category)}"
          ng-click="categorySelector.toggle(category)">
         {{category}}
-        <i class="material-icons">close</i>
+        <i ng-click="categorySelector.delete(category)" class="material-icons">close</i>
       </a>
     </li>
     <li>
