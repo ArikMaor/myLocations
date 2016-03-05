@@ -2,19 +2,11 @@ export default class MainController {
 
   groupLocations = false
   selectedLocationCoords = {}
-  categoryFilter = []
 
-  constructor(DEFAULT_COORDINATES, categoryService, locationService) {
+  constructor(DEFAULT_COORDINATES) {
     'ngInject';
 
     console.log('yo!');
-
-    let categories = categoryService.getAll();
-
-    Object.assign(this, {
-      categories,
-      categoryFilter: Array.from(categories)
-    });
 
     this.selectedLocationCoords = DEFAULT_COORDINATES;
   }

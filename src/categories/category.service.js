@@ -12,7 +12,7 @@ export default class CategoryService {
   }
 
   getAll() {
-    return this._storage.categories;
+    return Array.from(this._storage.categories);
   }
 
   add(category) {

@@ -3,7 +3,7 @@ export default class SelectedCategoriesService {
   list = []
 
   constructor(categoryService) {
-    this.selectedCategories = categoryService.getAll();
+    this.list = categoryService.getAll();
   }
 
   select(category) {

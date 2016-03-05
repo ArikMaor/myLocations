@@ -1,10 +1,10 @@
 <div class="map-container">
-  <ui-gmap-google-map center='main.selectedLocationCoords' zoom='8' options="{disableDefaultUI: true}"></ui-gmap-google-map>
+  <ui-gmap-google-map center='main.selectedLocationCoords' zoom='10' options="{disableDefaultUI: true}"></ui-gmap-google-map>
 </div>
 <div class='main-view'>
   <div class="main-view-content container">
-    <category-selector categories="main.categories" selected-categories="main.categoryFilter"></category-selector>
-    <locations-list category-filter="main.categoryFilter" onLocationSelected="main.onLocationSelected"></locations-list>
+    <category-selector></category-selector>
+    <locations-list onLocationSelected="main.onLocationSelected"></locations-list>
   </div>
   <div class="container">
     <a ui-sref="location" class="new-location-button btn-floating btn-large waves-effect waves-light right"><i class="material-icons">add</i></a>

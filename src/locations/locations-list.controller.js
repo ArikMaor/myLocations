@@ -1,23 +1,19 @@
 export default class LocationsListController {
 
-  categoryFilter = undefined
-  locations = []
-
-  constructor(locationService) {
+  constructor(locationService, selectedCategoriesService) {
     'ngInject';
 
     Object.assign(this, {
-      _locationService: locationService
-    });
+      locations: locationService.getAll(),
 
-    this.locations = locationService.getAll();
+      locationService,
+      selectedCategoriesService
+    });
   }
 
   isVisible(location) {
-    let filter = this.categoryFilter;
-
-    return !filter || location.categories.find(category =>
-      filter.includes(category));
+    return location.categories.find(category =>
+      this.selectedCategoriesService.isSelected(category));
   }
 
   _onSelected = []
@@ -33,7 +29,7 @@ export default class LocationsListController {
     if (confirm(`Are you sure you want to delete "${location.name}"?`)) {
       let locations = this.locations;
 
-      this._locationService.remove(location);
+      this.locationService.remove(location);
       locations.splice(locations.indexOf(location), 1);
     }
   }
