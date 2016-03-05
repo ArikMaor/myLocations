@@ -1,13 +1,14 @@
 export default class LocationsListController {
 
-  constructor(locationService, selectedCategoriesService) {
+  constructor($state, locationService, selectedCategoriesService) {
     'ngInject';
 
     Object.assign(this, {
       locations: locationService.getAll(),
 
       locationService,
-      selectedCategoriesService
+      selectedCategoriesService,
+      $state
     });
   }
 
@@ -32,5 +33,9 @@ export default class LocationsListController {
       this.locationService.remove(location);
       locations.splice(locations.indexOf(location), 1);
     }
+  }
+
+  edit(location) {
+    this.$state.go('location', { locationId: location.id });
   }
 }

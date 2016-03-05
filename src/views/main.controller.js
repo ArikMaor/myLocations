@@ -6,8 +6,6 @@ export default class MainController {
   constructor(DEFAULT_COORDINATES) {
     'ngInject';
 
-    console.log('yo!');
-
     this.selectedLocationCoords = DEFAULT_COORDINATES;
   }
 

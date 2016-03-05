@@ -19,5 +19,7 @@ npm run dev
 4. Selected view
   1. show only selected at top and hide others
   2. Display marker on map
-  3. add delete/edit buttons
-5. Enable collapsible behavior
+  3. show delete/edit buttons only on that view
+5. Enable location grouping
+6. Fix wierd mobile behaviors (materialize-css not so good after all...)
+7. Change colors to ones that doesn't suck
