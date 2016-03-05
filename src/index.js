@@ -7,6 +7,7 @@ import angularMaterialize from 'angular-materialize'
 import router from 'angular-ui-router'
 import 'angular-simple-logger'
 import 'angular-google-maps'
+import 'ng-places-autocomplete'
 
 import { DEFAULT_CATEGORIES, DEFAULT_LOCATIONS, DEFAULT_COORDINATES } from './constants'
 
@@ -16,7 +17,7 @@ import locations from './locations/locations.module'
 import routes from './routes'
 
 export default angular.module('myLocations',
-  [router, angularMaterialize, 'uiGmapgoogle-maps', categories, locations])
+  [router, angularMaterialize, 'ngPlacesAutocomplete', 'uiGmapgoogle-maps', categories, locations])
   .constant('DEFAULT_CATEGORIES', DEFAULT_CATEGORIES)
   .constant('DEFAULT_LOCATIONS', DEFAULT_LOCATIONS)
   .constant('DEFAULT_COORDINATES', DEFAULT_COORDINATES)

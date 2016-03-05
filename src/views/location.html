@@ -1,14 +1,18 @@
 <div class="location-view container">
-  <form ng-submit="location.save()">
+  <form novalidate>
     <div class="row">
       <div input-field>
-        <input type="text" ng-model="location.obj.name" length="150">
+        <input type="text" ng-model="location.obj.name" length="150" placeholder="Enter name for location" required="">
         <label>Location Name</label>
       </div>
     </div>
     <div class="row">
       <div input-field>
-        <input type="text" ng-model="location.obj.address" length="150">
+        <input type="text" ng-model="location.obj.address" length="150"
+               ng-places-autocomplete
+               pa-on-place-ready="location.onPlaceSelected"
+               pa-option="location.autocompleteOptions"
+               placeholder="Enter the address">
         <label>Address</label>
       </div>
     </div>
@@ -31,7 +35,7 @@
   <div class="row">
     <div class="z-depth-2">
       <ui-gmap-google-map center='location.mapCenter'
-      zoom='8'
+      zoom='15'
       options="{disableDefaultUI: true}"
       >
         <ui-gmap-marker
@@ -42,7 +46,7 @@
     </div>
   </div>
   <div class="row">
-    <input type="submit" class="btn right" value="Save" />
+    <input type="submit" ng-click="location.save()" class="btn right" value="Save" />
   </div>
 </form>
 </div>

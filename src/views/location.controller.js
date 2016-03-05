@@ -7,11 +7,17 @@ export default class LocationController {
     coordinates: {}
   }
 
+  autocompleteOptions = { preventSubmit: true }
+
+  place = {}
+
   constructor(DEFAULT_COORDINATES, $state, $stateParams, categoryService, locationService) {
     'ngInject';
 
     Object.assign(this, {
       mapCenter: Object.assign({}, DEFAULT_COORDINATES),
+
+      onPlaceSelected: this.onPlaceSelected.bind(this),
 
       _allCategories: categoryService.getAll(),
       _categoryService: categoryService,
@@ -39,5 +45,18 @@ export default class LocationController {
   save() {
     this._locationService.add(this.obj);
     this.$state.go('main');
+  }
+
+  onPlaceSelected(error, location_details) {
+    if (error) {
+      console.log(`error: ${error}`);
+    } else {
+      let location_coords = location_details.geometry.location;
+      this.obj.coordinates = {
+        latitude: location_coords.lat(),
+        longitude: location_coords.lng()
+      };
+      Object.assign(this.mapCenter, this.obj.coordinates)
+    }
   }
 }
