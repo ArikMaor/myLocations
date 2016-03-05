@@ -18,7 +18,7 @@ export default function($stateProvider, $urlRouterProvider) {
       controllerAs: 'main'
     })
     .state('location', {
-      url: "/location/:name",
+      url: "/location/:locationId",
       template: locationTemplate,
       controller: locationController,
       controllerAs: 'location'

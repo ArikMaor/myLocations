@@ -1,6 +1,7 @@
 export default class LocationController {
 
   obj = {
+    id: undefined,
     name: '',
     address: '',
     categories: [],
@@ -9,28 +10,20 @@ export default class LocationController {
 
   autocompleteOptions = { preventSubmit: true }
 
-  originalLocationName = null;
-
   place = {}
 
   constructor(DEFAULT_COORDINATES, $state, $stateParams, categoryService, locationService) {
     'ngInject';
 
-    if ($stateParams.name) {
-      let originalLocation = locationService.getOne($stateParams.name);
-      if (originalLocation) {
-        this.originalLocationName = originalLocation.name;
-        Object.assign(this.obj, originalLocation);
-      } else {
-        Object.assign(this.obj, {
-          name: $stateParams.name,
-          coordinates: Object.assign({}, DEFAULT_COORDINATES)
-        });
-      }
+    if ($stateParams.locationId) {
+      let location = locationService.getOne(parseInt($stateParams.locationId));
+      Object.assign(this.obj, location ? location : {
+        coordinates: Object.assign({}, DEFAULT_COORDINATES)
+      });
     }
 
     Object.assign(this, {
-      mapCenter: Object.assign({}, DEFAULT_COORDINATES),
+      mapCenter: this.obj.coordinates,
 
       onPlaceSelected: this.onPlaceSelected.bind(this),
 
@@ -56,10 +49,11 @@ export default class LocationController {
   }
 
   save() {
-    if (this.originalLocationName) {
-      this._locationService.update(this.obj);
+    let location = this.obj;
+    if (location.id) {
+      this._locationService.update(location);
     } else {
-      this._locationService.add(this.obj);
+      this._locationService.add(location);
     }
     this.$state.go('main');
   }

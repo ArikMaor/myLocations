@@ -1,3 +1,5 @@
+import _ from 'underscore'
+
 export default class LocationService {
   constructor($localStorage, DEFAULT_LOCATIONS) {
     'ngInject';
@@ -15,13 +17,17 @@ export default class LocationService {
     return Array.from(this.locations);
   }
 
-  getOne(locationName) {
-    return this.locations.find(location =>
-      location.name.toLowerCase() == locationName.toLowerCase());
+  getOne(locationId) {
+    return this.locations.find(location => location.id == locationId);
   }
 
   add(location) {
-    this.locations.push(location);
+    if (location.id) {
+      console.error(`can't add existing location`);
+    } else {
+      location.id = this._get_new_id();
+      this.locations.push(location);
+    }
   }
 
   remove(location) {
@@ -30,7 +36,13 @@ export default class LocationService {
   }
 
   update(location) {
-    let existing_location = this.getOne(location.name);
+    let existing_location = this.getOne(location.id);
     Object.assign(existing_location, location);
+  }
+
+  _get_new_id() {
+    let locations = this.locations;
+    return locations.length == 0 ? 1 :
+      _.max(locations, location => location.id) + 1;
   }
 }
