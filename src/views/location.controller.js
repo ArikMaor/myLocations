@@ -32,7 +32,7 @@ export default class LocationController {
     Object.assign(this, {
       mapCenter: Object.assign({}, DEFAULT_COORDINATES),
 
-      onPlaceSelected: this.onPlaceSelected,
+      onPlaceSelected: this.onPlaceSelected.bind(this),
 
       _allCategories: categoryService.getAll(),
       _categoryService: categoryService,
