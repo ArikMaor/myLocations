@@ -10,8 +10,6 @@ export default class LocationController {
 
   autocompleteOptions = { preventSubmit: true }
 
-  place = {}
-
   constructor(DEFAULT_COORDINATES, $state, $stateParams, categoryService, locationService) {
     'ngInject';
 
