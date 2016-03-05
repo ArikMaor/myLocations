@@ -1,7 +1,7 @@
 <div id="category-selector" class="category-selector side-nav fixed">
   <ul>
       <li ng-repeat="category in categorySelector.categories track by category"
-          ng-class="{active: categorySelector.isSelected(category)}"
+          ng-class="{selected: categorySelector.isSelected(category)}"
           ng-click="categorySelector.toggle(category)"
           class="waves-effect waves-purple">
         <a>

@@ -4,5 +4,9 @@
   li {
     display: flex;
     justify-content: space-between;
+
+    &.selected {
+      background-color: $success-color;
+    }
   }
 }
