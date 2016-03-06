@@ -16,6 +16,7 @@ npm run dev
   3. categories (at least 1 selected)
   4. coords (required)
 3. fix location select/submit bug
+4. fix modal/confirm box not showen in mobile bug
 4. Selected view
   1. show only selected at top and hide others
   2. Display marker on map
